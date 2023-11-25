@@ -1,3 +1,7 @@
 
 
 wget --post-data "username=beltramoe@gmail.com&password=Phoenix2121_" 'https://download.is.tue.mpg.de/download.php?domain=smpl&sfile=SMPL_python_v.1.0.0.zip&resume=1' -O './SMPL_python_v.1.0.0.zip'
+
+
+sudo apt-get install libeigen3-dev ffmpeg
+conda env create -f environment.yaml
