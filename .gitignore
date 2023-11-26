@@ -21,3 +21,6 @@ run.sh
 gradio_cached_examples/
 *.blend
 *.blend1
+lib/common/**/*.cpp
+lib/common/**/*.c
+
