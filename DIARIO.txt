@@ -4,4 +4,6 @@ wget --post-data "username=beltramoe@gmail.com&password=Phoenix2121_" 'https://d
 
 
 sudo apt-get install libeigen3-dev ffmpeg
-conda env create -f environment.yaml
+
+
+python -m apps.infer -cfg ./configs/econ.yaml -in_dir ./examples -out_dir ./results
