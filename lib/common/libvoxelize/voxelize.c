@@ -6,6 +6,9 @@
         "depends": [
             "tribox2.h"
         ],
+        "libraries": [
+            "m"
+        ],
         "name": "voxelize",
         "sources": [
             "voxelize.pyx"
@@ -16851,7 +16854,7 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *__
   return __pyx_r;
 }
 
-/* "voxelize.pyx":13
+/* "voxelize.pyx":12
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_mesh_(bint[:, :, :] occ, float[:, :, ::1] faces):             # <<<<<<<<<<<<<<
@@ -16882,7 +16885,7 @@ static int __pyx_f_8voxelize_voxelize_mesh_(__Pyx_memviewslice __pyx_v_occ, __Py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("voxelize_mesh_", 0);
 
-  /* "voxelize.pyx":14
+  /* "voxelize.pyx":13
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_mesh_(bint[:, :, :] occ, float[:, :, ::1] faces):
  *     assert(faces.shape[1] == 3)             # <<<<<<<<<<<<<<
@@ -16894,14 +16897,14 @@ static int __pyx_f_8voxelize_voxelize_mesh_(__Pyx_memviewslice __pyx_v_occ, __Py
     __pyx_t_1 = ((__pyx_v_faces.shape[1]) == 3);
     if (unlikely(!__pyx_t_1)) {
       __Pyx_Raise(__pyx_builtin_AssertionError, 0, 0, 0);
-      __PYX_ERR(0, 14, __pyx_L1_error)
+      __PYX_ERR(0, 13, __pyx_L1_error)
     }
   }
   #else
-  if ((1)); else __PYX_ERR(0, 14, __pyx_L1_error)
+  if ((1)); else __PYX_ERR(0, 13, __pyx_L1_error)
   #endif
 
-  /* "voxelize.pyx":15
+  /* "voxelize.pyx":14
  * cpdef int voxelize_mesh_(bint[:, :, :] occ, float[:, :, ::1] faces):
  *     assert(faces.shape[1] == 3)
  *     assert(faces.shape[2] == 3)             # <<<<<<<<<<<<<<
@@ -16913,14 +16916,14 @@ static int __pyx_f_8voxelize_voxelize_mesh_(__Pyx_memviewslice __pyx_v_occ, __Py
     __pyx_t_1 = ((__pyx_v_faces.shape[2]) == 3);
     if (unlikely(!__pyx_t_1)) {
       __Pyx_Raise(__pyx_builtin_AssertionError, 0, 0, 0);
-      __PYX_ERR(0, 15, __pyx_L1_error)
+      __PYX_ERR(0, 14, __pyx_L1_error)
     }
   }
   #else
-  if ((1)); else __PYX_ERR(0, 15, __pyx_L1_error)
+  if ((1)); else __PYX_ERR(0, 14, __pyx_L1_error)
   #endif
 
-  /* "voxelize.pyx":17
+  /* "voxelize.pyx":16
  *     assert(faces.shape[2] == 3)
  * 
  *     n_faces = faces.shape[0]             # <<<<<<<<<<<<<<
@@ -16929,7 +16932,7 @@ static int __pyx_f_8voxelize_voxelize_mesh_(__Pyx_memviewslice __pyx_v_occ, __Py
  */
   __pyx_v_n_faces = (__pyx_v_faces.shape[0]);
 
-  /* "voxelize.pyx":19
+  /* "voxelize.pyx":18
  *     n_faces = faces.shape[0]
  *     cdef int i
  *     for i in range(n_faces):             # <<<<<<<<<<<<<<
@@ -16941,7 +16944,7 @@ static int __pyx_f_8voxelize_voxelize_mesh_(__Pyx_memviewslice __pyx_v_occ, __Py
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "voxelize.pyx":20
+    /* "voxelize.pyx":19
  *     cdef int i
  *     for i in range(n_faces):
  *         voxelize_triangle_(occ, faces[i])             # <<<<<<<<<<<<<<
@@ -16965,12 +16968,12 @@ __pyx_t_5.shape[1] = __pyx_v_faces.shape[2];
 __pyx_t_5.strides[1] = __pyx_v_faces.strides[2];
     __pyx_t_5.suboffsets[1] = -1;
 
-__pyx_t_6 = __pyx_f_8voxelize_voxelize_triangle_(__pyx_v_occ, __pyx_t_5, 0); if (unlikely(__pyx_t_6 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 20, __pyx_L1_error)
+__pyx_t_6 = __pyx_f_8voxelize_voxelize_triangle_(__pyx_v_occ, __pyx_t_5, 0); if (unlikely(__pyx_t_6 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L1_error)
     __PYX_XCLEAR_MEMVIEW(&__pyx_t_5, 1);
     __pyx_t_5.memview = NULL; __pyx_t_5.data = NULL;
   }
 
-  /* "voxelize.pyx":13
+  /* "voxelize.pyx":12
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_mesh_(bint[:, :, :] occ, float[:, :, ::1] faces):             # <<<<<<<<<<<<<<
@@ -17035,19 +17038,19 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       switch (__pyx_nargs) {
         case  0:
         if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_occ)) != 0)) kw_args--;
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 13, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 12, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_faces)) != 0)) kw_args--;
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 13, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 12, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("voxelize_mesh_", 1, 2, 2, 1); __PYX_ERR(0, 13, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("voxelize_mesh_", 1, 2, 2, 1); __PYX_ERR(0, 12, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "voxelize_mesh_") < 0)) __PYX_ERR(0, 13, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "voxelize_mesh_") < 0)) __PYX_ERR(0, 12, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -17055,12 +17058,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
       values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
     }
-    __pyx_v_occ = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_bint(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_occ.memview)) __PYX_ERR(0, 13, __pyx_L3_error)
-    __pyx_v_faces = __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_float(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_faces.memview)) __PYX_ERR(0, 13, __pyx_L3_error)
+    __pyx_v_occ = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_bint(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_occ.memview)) __PYX_ERR(0, 12, __pyx_L3_error)
+    __pyx_v_faces = __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_float(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_faces.memview)) __PYX_ERR(0, 12, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("voxelize_mesh_", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 13, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("voxelize_mesh_", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 12, __pyx_L3_error)
   __pyx_L3_error:;
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_occ, 1);
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_faces, 1);
@@ -17087,10 +17090,10 @@ static PyObject *__pyx_pf_8voxelize_voxelize_mesh_(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("voxelize_mesh_", 0);
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_occ.memview)) { __Pyx_RaiseUnboundLocalError("occ"); __PYX_ERR(0, 13, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_faces.memview)) { __Pyx_RaiseUnboundLocalError("faces"); __PYX_ERR(0, 13, __pyx_L1_error) }
-  __pyx_t_1 = __pyx_f_8voxelize_voxelize_mesh_(__pyx_v_occ, __pyx_v_faces, 0); if (unlikely(__pyx_t_1 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 13, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
+  if (unlikely(!__pyx_v_occ.memview)) { __Pyx_RaiseUnboundLocalError("occ"); __PYX_ERR(0, 12, __pyx_L1_error) }
+  if (unlikely(!__pyx_v_faces.memview)) { __Pyx_RaiseUnboundLocalError("faces"); __PYX_ERR(0, 12, __pyx_L1_error) }
+  __pyx_t_1 = __pyx_f_8voxelize_voxelize_mesh_(__pyx_v_occ, __pyx_v_faces, 0); if (unlikely(__pyx_t_1 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -17107,7 +17110,7 @@ static PyObject *__pyx_pf_8voxelize_voxelize_mesh_(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "voxelize.pyx":25
+/* "voxelize.pyx":24
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_triangle_(bint[:, :, :] occupancies, float[:, ::1] triverts):             # <<<<<<<<<<<<<<
@@ -17160,7 +17163,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
   Py_ssize_t __pyx_t_25;
   __Pyx_RefNannySetupContext("voxelize_triangle_", 0);
 
-  /* "voxelize.pyx":33
+  /* "voxelize.pyx":32
  *     cdef bint intersection
  * 
  *     boxhalfsize[:] = (0.5, 0.5, 0.5)             # <<<<<<<<<<<<<<
@@ -17175,7 +17178,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
   (__pyx_t_1[1]) = __pyx_t_3;
   (__pyx_t_1[2]) = __pyx_t_4;
 
-  /* "voxelize.pyx":35
+  /* "voxelize.pyx":34
  *     boxhalfsize[:] = (0.5, 0.5, 0.5)
  * 
  *     for i in range(3):             # <<<<<<<<<<<<<<
@@ -17185,7 +17188,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
   for (__pyx_t_5 = 0; __pyx_t_5 < 3; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "voxelize.pyx":37
+    /* "voxelize.pyx":36
  *     for i in range(3):
  *         bbox_min[i] = <int> (
  *             min(triverts[0, i], triverts[1, i], triverts[2, i])             # <<<<<<<<<<<<<<
@@ -17213,7 +17216,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
       __pyx_t_11 = __pyx_t_10;
     }
 
-    /* "voxelize.pyx":36
+    /* "voxelize.pyx":35
  * 
  *     for i in range(3):
  *         bbox_min[i] = <int> (             # <<<<<<<<<<<<<<
@@ -17222,7 +17225,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
  */
     (__pyx_v_bbox_min[__pyx_v_i]) = ((int)__pyx_t_11);
 
-    /* "voxelize.pyx":39
+    /* "voxelize.pyx":38
  *             min(triverts[0, i], triverts[1, i], triverts[2, i])
  *         )
  *         bbox_min[i] = min(max(bbox_min[i], 0), occupancies.shape[i] - 1)             # <<<<<<<<<<<<<<
@@ -17246,7 +17249,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
     (__pyx_v_bbox_min[__pyx_v_i]) = __pyx_t_16;
   }
 
-  /* "voxelize.pyx":41
+  /* "voxelize.pyx":40
  *         bbox_min[i] = min(max(bbox_min[i], 0), occupancies.shape[i] - 1)
  * 
  *     for i in range(3):             # <<<<<<<<<<<<<<
@@ -17256,7 +17259,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
   for (__pyx_t_5 = 0; __pyx_t_5 < 3; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "voxelize.pyx":43
+    /* "voxelize.pyx":42
  *     for i in range(3):
  *         bbox_max[i] = <int> (
  *             max(triverts[0, i], triverts[1, i], triverts[2, i])             # <<<<<<<<<<<<<<
@@ -17284,7 +17287,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
       __pyx_t_10 = __pyx_t_9;
     }
 
-    /* "voxelize.pyx":42
+    /* "voxelize.pyx":41
  * 
  *     for i in range(3):
  *         bbox_max[i] = <int> (             # <<<<<<<<<<<<<<
@@ -17293,7 +17296,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
  */
     (__pyx_v_bbox_max[__pyx_v_i]) = ((int)__pyx_t_10);
 
-    /* "voxelize.pyx":45
+    /* "voxelize.pyx":44
  *             max(triverts[0, i], triverts[1, i], triverts[2, i])
  *         )
  *         bbox_max[i] = min(max(bbox_max[i], 0), occupancies.shape[i] - 1)             # <<<<<<<<<<<<<<
@@ -17317,7 +17320,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
     (__pyx_v_bbox_max[__pyx_v_i]) = __pyx_t_12;
   }
 
-  /* "voxelize.pyx":47
+  /* "voxelize.pyx":46
  *         bbox_max[i] = min(max(bbox_max[i], 0), occupancies.shape[i] - 1)
  * 
  *     for i in range(bbox_min[0], bbox_max[0] + 1):             # <<<<<<<<<<<<<<
@@ -17329,7 +17332,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
   for (__pyx_t_5 = (__pyx_v_bbox_min[0]); __pyx_t_5 < __pyx_t_15; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "voxelize.pyx":48
+    /* "voxelize.pyx":47
  * 
  *     for i in range(bbox_min[0], bbox_max[0] + 1):
  *         for j in range(bbox_min[1], bbox_max[1] + 1):             # <<<<<<<<<<<<<<
@@ -17341,7 +17344,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
     for (__pyx_t_14 = (__pyx_v_bbox_min[1]); __pyx_t_14 < __pyx_t_18; __pyx_t_14+=1) {
       __pyx_v_j = __pyx_t_14;
 
-      /* "voxelize.pyx":49
+      /* "voxelize.pyx":48
  *     for i in range(bbox_min[0], bbox_max[0] + 1):
  *         for j in range(bbox_min[1], bbox_max[1] + 1):
  *             for k in range(bbox_min[2], bbox_max[2] + 1):             # <<<<<<<<<<<<<<
@@ -17353,7 +17356,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
       for (__pyx_t_21 = (__pyx_v_bbox_min[2]); __pyx_t_21 < __pyx_t_20; __pyx_t_21+=1) {
         __pyx_v_k = __pyx_t_21;
 
-        /* "voxelize.pyx":50
+        /* "voxelize.pyx":49
  *         for j in range(bbox_min[1], bbox_max[1] + 1):
  *             for k in range(bbox_min[2], bbox_max[2] + 1):
  *                 boxcenter[:] = (i + 0.5, j + 0.5, k + 0.5)             # <<<<<<<<<<<<<<
@@ -17368,7 +17371,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
         (__pyx_t_1[1]) = __pyx_t_3;
         (__pyx_t_1[2]) = __pyx_t_2;
 
-        /* "voxelize.pyx":52
+        /* "voxelize.pyx":51
  *                 boxcenter[:] = (i + 0.5, j + 0.5, k + 0.5)
  *                 intersection = triBoxOverlap(&boxcenter[0], &boxhalfsize[0],
  *                                              &triverts[0, 0], &triverts[1, 0], &triverts[2, 0])             # <<<<<<<<<<<<<<
@@ -17382,7 +17385,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
         __pyx_t_24 = 2;
         __pyx_t_25 = 0;
 
-        /* "voxelize.pyx":51
+        /* "voxelize.pyx":50
  *             for k in range(bbox_min[2], bbox_max[2] + 1):
  *                 boxcenter[:] = (i + 0.5, j + 0.5, k + 0.5)
  *                 intersection = triBoxOverlap(&boxcenter[0], &boxhalfsize[0],             # <<<<<<<<<<<<<<
@@ -17391,7 +17394,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
  */
         __pyx_v_intersection = triBoxOverlap((&(__pyx_v_boxcenter[0])), (&(__pyx_v_boxhalfsize[0])), (&(*((float *) ( /* dim=1 */ ((char *) (((float *) ( /* dim=0 */ (__pyx_v_triverts.data + __pyx_t_6 * __pyx_v_triverts.strides[0]) )) + __pyx_t_7)) )))), (&(*((float *) ( /* dim=1 */ ((char *) (((float *) ( /* dim=0 */ (__pyx_v_triverts.data + __pyx_t_22 * __pyx_v_triverts.strides[0]) )) + __pyx_t_23)) )))), (&(*((float *) ( /* dim=1 */ ((char *) (((float *) ( /* dim=0 */ (__pyx_v_triverts.data + __pyx_t_24 * __pyx_v_triverts.strides[0]) )) + __pyx_t_25)) )))));
 
-        /* "voxelize.pyx":53
+        /* "voxelize.pyx":52
  *                 intersection = triBoxOverlap(&boxcenter[0], &boxhalfsize[0],
  *                                              &triverts[0, 0], &triverts[1, 0], &triverts[2, 0])
  *                 occupancies[i, j, k] |= intersection             # <<<<<<<<<<<<<<
@@ -17406,7 +17409,7 @@ static int __pyx_f_8voxelize_voxelize_triangle_(__Pyx_memviewslice __pyx_v_occup
     }
   }
 
-  /* "voxelize.pyx":25
+  /* "voxelize.pyx":24
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_triangle_(bint[:, :, :] occupancies, float[:, ::1] triverts):             # <<<<<<<<<<<<<<
@@ -17465,19 +17468,19 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       switch (__pyx_nargs) {
         case  0:
         if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_occupancies)) != 0)) kw_args--;
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_triverts)) != 0)) kw_args--;
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("voxelize_triangle_", 1, 2, 2, 1); __PYX_ERR(0, 25, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("voxelize_triangle_", 1, 2, 2, 1); __PYX_ERR(0, 24, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "voxelize_triangle_") < 0)) __PYX_ERR(0, 25, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "voxelize_triangle_") < 0)) __PYX_ERR(0, 24, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -17485,12 +17488,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
       values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
     }
-    __pyx_v_occupancies = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_bint(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_occupancies.memview)) __PYX_ERR(0, 25, __pyx_L3_error)
-    __pyx_v_triverts = __Pyx_PyObject_to_MemoryviewSlice_d_dc_float(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_triverts.memview)) __PYX_ERR(0, 25, __pyx_L3_error)
+    __pyx_v_occupancies = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_bint(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_occupancies.memview)) __PYX_ERR(0, 24, __pyx_L3_error)
+    __pyx_v_triverts = __Pyx_PyObject_to_MemoryviewSlice_d_dc_float(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_triverts.memview)) __PYX_ERR(0, 24, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("voxelize_triangle_", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 25, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("voxelize_triangle_", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 24, __pyx_L3_error)
   __pyx_L3_error:;
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_occupancies, 1);
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_triverts, 1);
@@ -17517,10 +17520,10 @@ static PyObject *__pyx_pf_8voxelize_2voxelize_triangle_(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("voxelize_triangle_", 0);
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_occupancies.memview)) { __Pyx_RaiseUnboundLocalError("occupancies"); __PYX_ERR(0, 25, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_triverts.memview)) { __Pyx_RaiseUnboundLocalError("triverts"); __PYX_ERR(0, 25, __pyx_L1_error) }
-  __pyx_t_1 = __pyx_f_8voxelize_voxelize_triangle_(__pyx_v_occupancies, __pyx_v_triverts, 0); if (unlikely(__pyx_t_1 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (unlikely(!__pyx_v_occupancies.memview)) { __Pyx_RaiseUnboundLocalError("occupancies"); __PYX_ERR(0, 24, __pyx_L1_error) }
+  if (unlikely(!__pyx_v_triverts.memview)) { __Pyx_RaiseUnboundLocalError("triverts"); __PYX_ERR(0, 24, __pyx_L1_error) }
+  __pyx_t_1 = __pyx_f_8voxelize_voxelize_triangle_(__pyx_v_occupancies, __pyx_v_triverts, 0); if (unlikely(__pyx_t_1 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -17537,7 +17540,7 @@ static PyObject *__pyx_pf_8voxelize_2voxelize_triangle_(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "voxelize.pyx":58
+/* "voxelize.pyx":57
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cdef int test_triangle_aabb(float[::1] boxcenter, float[::1] boxhalfsize, float[:, ::1] triverts):             # <<<<<<<<<<<<<<
@@ -17563,7 +17566,7 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_triangle_aabb", 0);
 
-  /* "voxelize.pyx":59
+  /* "voxelize.pyx":58
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cdef int test_triangle_aabb(float[::1] boxcenter, float[::1] boxhalfsize, float[:, ::1] triverts):
  *     assert(boxcenter.shape[0] == 3)             # <<<<<<<<<<<<<<
@@ -17575,14 +17578,14 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
     __pyx_t_1 = ((__pyx_v_boxcenter.shape[0]) == 3);
     if (unlikely(!__pyx_t_1)) {
       __Pyx_Raise(__pyx_builtin_AssertionError, 0, 0, 0);
-      __PYX_ERR(0, 59, __pyx_L1_error)
+      __PYX_ERR(0, 58, __pyx_L1_error)
     }
   }
   #else
-  if ((1)); else __PYX_ERR(0, 59, __pyx_L1_error)
+  if ((1)); else __PYX_ERR(0, 58, __pyx_L1_error)
   #endif
 
-  /* "voxelize.pyx":60
+  /* "voxelize.pyx":59
  * cdef int test_triangle_aabb(float[::1] boxcenter, float[::1] boxhalfsize, float[:, ::1] triverts):
  *     assert(boxcenter.shape[0] == 3)
  *     assert(boxhalfsize.shape[0] == 3)             # <<<<<<<<<<<<<<
@@ -17594,14 +17597,14 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
     __pyx_t_1 = ((__pyx_v_boxhalfsize.shape[0]) == 3);
     if (unlikely(!__pyx_t_1)) {
       __Pyx_Raise(__pyx_builtin_AssertionError, 0, 0, 0);
-      __PYX_ERR(0, 60, __pyx_L1_error)
+      __PYX_ERR(0, 59, __pyx_L1_error)
     }
   }
   #else
-  if ((1)); else __PYX_ERR(0, 60, __pyx_L1_error)
+  if ((1)); else __PYX_ERR(0, 59, __pyx_L1_error)
   #endif
 
-  /* "voxelize.pyx":61
+  /* "voxelize.pyx":60
  *     assert(boxcenter.shape[0] == 3)
  *     assert(boxhalfsize.shape[0] == 3)
  *     assert(triverts.shape[0] == triverts.shape[1] == 3)             # <<<<<<<<<<<<<<
@@ -17616,14 +17619,14 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
     }
     if (unlikely(!__pyx_t_1)) {
       __Pyx_Raise(__pyx_builtin_AssertionError, 0, 0, 0);
-      __PYX_ERR(0, 61, __pyx_L1_error)
+      __PYX_ERR(0, 60, __pyx_L1_error)
     }
   }
   #else
-  if ((1)); else __PYX_ERR(0, 61, __pyx_L1_error)
+  if ((1)); else __PYX_ERR(0, 60, __pyx_L1_error)
   #endif
 
-  /* "voxelize.pyx":65
+  /* "voxelize.pyx":64
  *     # print(triverts)
  *     # Call functions
  *     cdef int result = triBoxOverlap(&boxcenter[0], &boxhalfsize[0],             # <<<<<<<<<<<<<<
@@ -17633,7 +17636,7 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
 
-  /* "voxelize.pyx":66
+  /* "voxelize.pyx":65
  *     # Call functions
  *     cdef int result = triBoxOverlap(&boxcenter[0], &boxhalfsize[0],
  *                                     &triverts[0, 0], &triverts[1, 0], &triverts[2, 0])             # <<<<<<<<<<<<<<
@@ -17646,7 +17649,7 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
   __pyx_t_8 = 2;
   __pyx_t_9 = 0;
 
-  /* "voxelize.pyx":65
+  /* "voxelize.pyx":64
  *     # print(triverts)
  *     # Call functions
  *     cdef int result = triBoxOverlap(&boxcenter[0], &boxhalfsize[0],             # <<<<<<<<<<<<<<
@@ -17655,7 +17658,7 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
  */
   __pyx_v_result = triBoxOverlap((&(*((float *) ( /* dim=0 */ ((char *) (((float *) __pyx_v_boxcenter.data) + __pyx_t_2)) )))), (&(*((float *) ( /* dim=0 */ ((char *) (((float *) __pyx_v_boxhalfsize.data) + __pyx_t_3)) )))), (&(*((float *) ( /* dim=1 */ ((char *) (((float *) ( /* dim=0 */ (__pyx_v_triverts.data + __pyx_t_4 * __pyx_v_triverts.strides[0]) )) + __pyx_t_5)) )))), (&(*((float *) ( /* dim=1 */ ((char *) (((float *) ( /* dim=0 */ (__pyx_v_triverts.data + __pyx_t_6 * __pyx_v_triverts.strides[0]) )) + __pyx_t_7)) )))), (&(*((float *) ( /* dim=1 */ ((char *) (((float *) ( /* dim=0 */ (__pyx_v_triverts.data + __pyx_t_8 * __pyx_v_triverts.strides[0]) )) + __pyx_t_9)) )))));
 
-  /* "voxelize.pyx":67
+  /* "voxelize.pyx":66
  *     cdef int result = triBoxOverlap(&boxcenter[0], &boxhalfsize[0],
  *                                     &triverts[0, 0], &triverts[1, 0], &triverts[2, 0])
  *     return result             # <<<<<<<<<<<<<<
@@ -17663,7 +17666,7 @@ static int __pyx_f_8voxelize_test_triangle_aabb(__Pyx_memviewslice __pyx_v_boxce
   __pyx_r = __pyx_v_result;
   goto __pyx_L0;
 
-  /* "voxelize.pyx":58
+  /* "voxelize.pyx":57
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cdef int test_triangle_aabb(float[::1] boxcenter, float[::1] boxhalfsize, float[:, ::1] triverts):             # <<<<<<<<<<<<<<
@@ -18752,8 +18755,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 14, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 18, __pyx_L1_error)
   __pyx_builtin___import__ = __Pyx_GetBuiltinName(__pyx_n_s_import); if (!__pyx_builtin___import__) __PYX_ERR(1, 100, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 141, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 156, __pyx_L1_error)
@@ -18909,29 +18912,29 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__18);
   __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(1, 1, __pyx_L1_error)
 
-  /* "voxelize.pyx":13
+  /* "voxelize.pyx":12
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_mesh_(bint[:, :, :] occ, float[:, :, ::1] faces):             # <<<<<<<<<<<<<<
  *     assert(faces.shape[1] == 3)
  *     assert(faces.shape[2] == 3)
  */
-  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_occ, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_occ, __pyx_n_s_faces); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_voxelize_pyx, __pyx_n_s_voxelize_mesh, 13, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_voxelize_pyx, __pyx_n_s_voxelize_mesh, 12, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 12, __pyx_L1_error)
 
-  /* "voxelize.pyx":25
+  /* "voxelize.pyx":24
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_triangle_(bint[:, :, :] occupancies, float[:, ::1] triverts):             # <<<<<<<<<<<<<<
  *     cdef int bbox_min[3]
  *     cdef int bbox_max[3]
  */
-  __pyx_tuple__22 = PyTuple_Pack(2, __pyx_n_s_occupancies, __pyx_n_s_triverts); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(2, __pyx_n_s_occupancies, __pyx_n_s_triverts); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_voxelize_pyx, __pyx_n_s_voxelize_triangle, 25, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_voxelize_pyx, __pyx_n_s_voxelize_triangle, 24, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -19984,34 +19987,34 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Enum, __pyx_t_7) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "voxelize.pyx":13
+  /* "voxelize.pyx":12
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_mesh_(bint[:, :, :] occ, float[:, :, ::1] faces):             # <<<<<<<<<<<<<<
  *     assert(faces.shape[1] == 3)
  *     assert(faces.shape[2] == 3)
  */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_8voxelize_1voxelize_mesh_, 0, __pyx_n_s_voxelize_mesh, NULL, __pyx_n_s_voxelize, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_8voxelize_1voxelize_mesh_, 0, __pyx_n_s_voxelize_mesh, NULL, __pyx_n_s_voxelize, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_voxelize_mesh, __pyx_t_7) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_voxelize_mesh, __pyx_t_7) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "voxelize.pyx":25
+  /* "voxelize.pyx":24
  * @cython.boundscheck(False)  # Deactivate bounds checking
  * @cython.wraparound(False)   # Deactivate negative indexing.
  * cpdef int voxelize_triangle_(bint[:, :, :] occupancies, float[:, ::1] triverts):             # <<<<<<<<<<<<<<
  *     cdef int bbox_min[3]
  *     cdef int bbox_max[3]
  */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_8voxelize_3voxelize_triangle_, 0, __pyx_n_s_voxelize_triangle, NULL, __pyx_n_s_voxelize, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_8voxelize_3voxelize_triangle_, 0, __pyx_n_s_voxelize_triangle, NULL, __pyx_n_s_voxelize, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_voxelize_triangle, __pyx_t_7) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_voxelize_triangle, __pyx_t_7) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
   /* "voxelize.pyx":1
  * cimport cython             # <<<<<<<<<<<<<<
+ * from libc.math cimport floor, ceil
  * from cython.view cimport array as cvarray
- * from libc.math cimport ceil, floor
  */
   __pyx_t_7 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
