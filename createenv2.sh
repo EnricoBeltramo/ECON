@@ -13,10 +13,9 @@ conda install -c anaconda cython pip -y
 conda install -c bottler nvidiacub -y
 conda install -c conda-forge fvcore iopath pyembree -y
 conda install -c conda-forge pytorch-lightning kornia -y
+conda install -c pytorch3d pytorch3d -y
 
 pip install cupy-cuda11x
-
-pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu118_pyt1130/download.html
 
 pip install -r requirements2.txt
 
