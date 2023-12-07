@@ -30,3 +30,5 @@ lib/common/**/*.c
 
 examples/*.png
 prompts.py
+/lib/common/libmesh/*.pyd
+/lib/common/libmesh/*.cpp
