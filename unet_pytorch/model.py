@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from . import layers
+import layers
 
 
 class UNet(nn.Module):

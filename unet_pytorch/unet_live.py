@@ -55,7 +55,8 @@ while rval:
     prediction = preds[0].cpu().detach().numpy()
     prediction = np.transpose(prediction, (1, 2, 0))
     # To see a binary mask, uncomment the below line.
-    # prediction = np.uint8((prediction > 0.7) * 255)
+    #prediction = np.uint8((prediction > 0.8) * 255)
+    prediction = cv2.resize(prediction,(512,512))
     cv2.imshow("preview", prediction)
     cv2.imshow("normal", frame)
     key = cv2.waitKey(20)
